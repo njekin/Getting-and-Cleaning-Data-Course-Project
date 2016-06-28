@@ -52,4 +52,4 @@ final_df <- bind_cols(combined[,c(1,3)], ordered_mean_std)
 #write.csv(final_df, "final_df.csv")
 #generate tidy dataset with average of each variable for each activity and each subject. 
 tidy_set <- final_df %>% group_by(subject, activity) %>% summarise_each(funs(mean))
-write.csv(tidy_set,"tidy_set.csv")
+write.table(tidy_set,"tidy_set.txt", row.name=FALSE)
